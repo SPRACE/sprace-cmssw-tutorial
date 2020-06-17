@@ -23,7 +23,7 @@ process.generator = cms.EDFilter(
             "pythia8CommonSettings", "pythia8CUEP8M1Settings", "processParameters"
         ),
         processParameters=cms.vstring(
-            "WeakSingleBoson:ffbar2W = on", "24:onMode = off", "24:onIfAny = 11,12"
+            "WeakSingleBoson:ffbar2W = on", "24:onMode = off", "24:onIfAny = 13,14"
         ),
         pythia8CUEP8M1Settings=cms.vstring(
             "Tune:pp 14",
