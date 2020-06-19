@@ -37,13 +37,26 @@ process.generator = cms.EDFilter(
     ),
 )
 
+nuetamax = 1000.0
+nuetamin = -1000.0
+nustatus = 1
+nuptmin = 150.0
+
 process.genENeutrinos = cms.EDFilter(
-    "PythiaFilter",
-    Status=cms.untracked.int32(1),
-    MaxEta=cms.untracked.double(1000.0),
-    MinEta=cms.untracked.double(-1000.0),
-    MinPt=cms.untracked.double(150),
-    ParticleID=cms.untracked.int32(12, 14, 16),
+#    "PythiaFilter",
+#    Status=cms.untracked.int32(1),
+#    MaxEta=cms.untracked.double(1000.0),
+#    MinEta=cms.untracked.double(-1000.0),
+#    MinPt=cms.untracked.double(150),
+#    ParticleID=cms.untracked.int32(12, 14, 16),
+
+    "MCSingleParticleFilter",
+    MaxEta = cms.untracked.vdouble(nuetamax, nuetamax, nuetamax),
+    Status = cms.untracked.vint32(nustatus, nustatus, nustatus),
+    MinEta = cms.untracked.vdouble(nuetamin, nuetamin, nuetamin),
+    MinPt = cms.untracked.vdouble(nuptmin, nuptmin, nuptmin),
+    ParticleID = cms.untracked.vint32(12, 14, 16)
+
 )
 
 process.p = cms.Path(process.generator * process.genENeutrinos)
