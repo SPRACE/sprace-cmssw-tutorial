@@ -90,7 +90,7 @@ process.makeVerticesPath = cms.Path(process.develPrimaryVertices)
 process.schedule = cms.Schedule(process.makeVerticesPath)
 
 # Setup FWK for multithreaded
-process.options.numberOfThreads = cms.untracked.uint32(1)
+process.options.numberOfThreads = cms.untracked.uint32(NUM_THREADS)
 process.options.numberOfStreams = cms.untracked.uint32(0)
 process.options.numberOfConcurrentLuminosityBlocks = cms.untracked.uint32(1)
 
