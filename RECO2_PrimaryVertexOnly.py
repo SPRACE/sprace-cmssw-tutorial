@@ -1,7 +1,11 @@
+### Run this over a RECO file that contains generalTracks and BeamSpot
+### Run this with CMSSW_11_2_0_pre7 or later 
+
 import FWCore.ParameterSet.Config as cms
 
 process = cms.Process("RECO2")
 NUM_EVENTS = 10
+NUM_THREADS = 1
 
 # import of standard configurations
 process.load("Configuration.StandardSequences.Services_cff")
