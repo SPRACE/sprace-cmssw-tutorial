@@ -1,1 +1,1 @@
-# hlt-phase2
+# SPRACE CMSSW tutorial
